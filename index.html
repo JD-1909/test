@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seite mit Hintergrundbild</title>
+    <script src="https://fahrinfo.vbb.de/webapp/staticfiles/hafas-widget-core.1.0.0.js?language=de_DE"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap');
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Fira Sans', sans-serif;
+            height: 100vh;
+            background-image: url('Background.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            color: black;
+        }
+        .header {
+            background-color: rgba(233, 75, 53, 0);
+            width: 100%;
+            text-align: center;
+            padding: 20px 0;
+            color: white;
+            position: relative; /* Enable relative positioning */
+            left: 10%; /* Adjust this value to move the header further right */
+        }
+        .header h1 {
+            font-weight: 500;
+            margin: 0;
+            font-size: 6em;
+        }
+        .header p {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+            margin-top: 20px;
+            padding: 20px;
+            border: 2px solid rgba(233, 75, 53, 0);
+            position: relative; /* Um das Verschieben des iframe-container zu ermöglichen */
+        }
+        .text-container {
+            width: 45%;
+            text-align: left;
+        }
+        .text-container p {
+            font-size: 2em;
+            margin: 0;
+            display: inline-block;
+            padding: 5px 15px;
+            position: relative; /* Um das Verschieben des Inhalts zu ermöglichen */
+            top: -370px; /* Position des Containers nach oben verschieben, wenn nötig */
+        }
+        .iframe-container {
+            width: 60%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Widget wird nach oben ausgerichtet */
+            border: none;
+            margin-top: 10px;
+            overflow: hidden; /* Versteckt den Überfluss am unteren Ende */
+            max-height: 33.33%; /* Begrenze die Höhe auf ein Drittel */
+            position: relative; /* Um das Verschieben des Inhalts zu ermöglichen */
+            border: 2px solid rgba(233, 75, 53, 0);
+            top: -370px; /* Position des Containers nach oben verschieben, wenn nötig */
+            left: -20px; /* Verschiebt den iframe-container nach links innerhalb des content-Rahmens */
+    
+        }
+        .iframe-container > div[data-hfs-widget="true"] {
+            width: 100%;
+            height: 100%; /* Behalte die volle Höhe des Widgets */
+            position: relative;
+            top: 0; /* Verschiebt das Widget nach oben, damit es unten abgeschnitten wird */
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>S Mühlenbeck-Mönchmühle</h1>
+        <p>Verkehrsknotenpunkt</p>
+    </div>
+    <div class="content">
+        <div class="text-container">
+            <p>Die Deutsche Bahn frei nach Nena: "Irgendwie, irgendwo, irgendwann"</p>
+        </div>
+        <div class="iframe-container">
+            <div data-hfs-widget="true" data-hfs-widget-sq="true" data-hfs-widget-sq-displaymode="results" data-hfs-widget-sq-location="A=1@O=S Mühlenbeck-Mönchmühle@X=13388066@Y=52654324@U=86@L=900200013@B=1@p=1723116772@" data-hfs-widget-sq-locationname="S Mühlenbeck-Mönchmühle"></div>
+        </div>
+    </div>
+</body>
+</html>
