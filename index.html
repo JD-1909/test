@@ -4,13 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seite mit Hintergrundbild</title>
-    <script async src="https://fahrinfo.vbb.de/webapp/staticfiles/hafas-widget-core.1.0.0.js?language=de_DE"></script>
     <script async src="https://app2.weatherwidget.org/js/?id=ww_978b813989fb0"></script>
+    <script async src="https://fahrinfo.vbb.de/webapp/staticfiles/hafas-widget-core.1.0.0.js?language=de_DE"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- jQuery Conflict  -->
-    <!entweder pollen oder Newsticker:( >
-    <!<script async src="https://static.pollenflugkalender.com/v1.0/md-CbzNk8sz.js"></script>
-    <!<link rel="stylesheet" href="https://static.pollenflugkalender.com/v1.0/md-Ca3SV2sl.css" />
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap');
@@ -131,10 +127,8 @@
                 const seconds = now.getSeconds().toString().padStart(2, '0');
                 document.getElementById('time').textContent = `${hours}:${minutes}:${seconds}`;
             }
-
             // Uhrzeit jede Sekunde aktualisieren
             setInterval(updateTime, 1000);
-
             // Beim Laden der Seite die Uhrzeit sofort anzeigen
             window.onload = updateTime;
         </script>
@@ -204,17 +198,6 @@
         </div>
         <div class="wid-container">
             <div id="ww_978b813989fb0" v='1.3' loc='auto' a='{"t":"horizontal","lang":"de","sl_lpl":1,"ids":["wl3971"],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"#FFFFFF00","cl_font":"#000000","cl_cloud":"#d4d4d4","cl_persp":"#2196F3","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'>Mehr Vorhersagen: <a href="https://oneweather.org/de/deutschland/30_tage/" id="ww_978b813989fb0_u" target="_blank">wetter 4 wochen im voraus</a></div>
-		<script>
-			// Prüft, ob das Widget geladen wurde
-			setTimeout(function() {
-				const widgetLoaded = document.querySelector("#ww_978b813989fb0_u").innerHTML.length > 0;
-				if (!widgetLoaded) {
-					// Falls das Widget nicht geladen wurde, die Seite neu laden
-					location.reload();
-				}
-			}, 5000); // Wartezeit von 5 Sekunden, um zu prüfen, ob das Widget geladen wurde
-		</script>
-            <!<div id="pfk-root-md" data-slug="berlin" data-token="b3174f25f456537f01655c014928691c" class="pfk-custom"><!</div>
         </div>
     </div>
 </body>
