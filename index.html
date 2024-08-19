@@ -65,6 +65,7 @@
             justify-content: center;  /*Zentriert den Inhalt horizontal */
             align-items: center;  /*Zentriert den Inhalt vertikal */
             box-sizing: border-box;
+            flex-direction: column; /* Inhalt wird vertikal angeordnet */
         }
 
         .text-container {
@@ -80,6 +81,12 @@
             padding: 5px 15px;
             position: relative;
             top: 0; /* Positionieren relativ zum Container */
+        }
+
+        .text-container .source {
+            font-size: 1em;
+            margin-top: 10px;
+            color: gray;
         }
 
         .iframe-container {
@@ -135,6 +142,7 @@
     <div class="content">
         <div class="text-container">
             <p id="ticker-content">DB. Das "P" steht für pünktlich.</p>
+            <p class="source">Quelle: Newsticker vom Postillon (Achtung Satire!)</p>
         </div>
         <script>
             var BlogID = "746298260979647434";
