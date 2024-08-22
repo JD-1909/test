@@ -132,7 +132,8 @@
                     hour: '2-digit',
                     minute: '2-digit',
                     second: '2-digit',
-                    timeZoneName: 'short' // Optional, um die Zeitzone anzuzeigen (z.B. "CEST")
+                    timeZone: 'Europe/Berlin', // Zeitzone explizit auf Berlin gesetzt
+//                    timeZoneName: 'short'
                 };
                 const localTime = now.toLocaleTimeString('de-DE', options);
                 document.getElementById('time').textContent = localTime;
