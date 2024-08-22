@@ -128,10 +128,14 @@
         <script>
             function updateTime() {
                 const now = new Date();
-                const hours = now.getHours().toString().padStart(2, '0');
-                const minutes = now.getMinutes().toString().padStart(2, '0');
-                const seconds = now.getSeconds().toString().padStart(2, '0');
-                document.getElementById('time').textContent = `${hours}:${minutes}:${seconds}`;
+                const options = {
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit',
+                    timeZoneName: 'short' // Optional, um die Zeitzone anzuzeigen (z.B. "CEST")
+                };
+                const localTime = now.toLocaleTimeString('de-DE', options);
+                document.getElementById('time').textContent = localTime;
             }
             // Uhrzeit jede Sekunde aktualisieren
             setInterval(updateTime, 1000);
@@ -196,7 +200,6 @@
                     $("#ticker-content").text("").fadeIn("slow");
                 });
             }
-
             newsticker(BlogID, newstickerCount, feedIndex, 7900);
         </script>
         
@@ -204,7 +207,7 @@
             <div data-hfs-widget="true" data-hfs-widget-sq="true" data-hfs-widget-sq-displaymode="results" data-hfs-widget-sq-location="A=1@O=S Mühlenbeck-Mönchmühle@X=13388066@Y=52654324@U=86@L=900200013@B=1@p=1723116772@" data-hfs-widget-sq-locationname="S Mühlenbeck-Mönchmühle"></div>
         </div>
         <div class="wid-container">
-			<iframe src="https://www.meteoblue.com/en/weather/widget/three/m%c3%bchlenbeck_germany_2868366?geoloc=fixed&nocurrent=0&noforecast=0&days=4&tempunit=CELSIUS&windunit=KILOMETER_PER_HOUR&layout=bright"  frameborder="0" scrolling="NO" allowtransparency="true" sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox" style="width: 460px; height: 591px"></iframe><div><!-- DO NOT REMOVE THIS LINK --><a href="https://www.meteoblue.com/en/weather/week/m%c3%bchlenbeck_germany_2868366?utm_source=three_widget&utm_medium=linkus&utm_content=three&utm_campaign=Weather%2BWidget" target="_blank" rel="noopener"> </a></div>        </div>
-		</div>
+            <iframe src="https://www.meteoblue.com/en/weather/widget/three/m%c3%bchlenbeck_germany_2868366?geoloc=fixed&nocurrent=0&noforecast=0&days=4&tempunit=CELSIUS&windunit=KILOMETER_PER_HOUR&layout=bright"  frameborder="0" scrolling="NO" allowtransparency="true" sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox" style="width: 460px; height: 591px"></iframe><div><!-- DO NOT REMOVE THIS LINK --><a href="https://www.meteoblue.com/en/weather/week/m%c3%bchlenbeck_germany_2868366?utm_source=three_widget&utm_medium=linkus&utm_content=three&utm_campaign=Weather%2BWidget" target="_blank" rel="noopener"> </a></div>        </div>
+        </div>
 </body>
 </html>
